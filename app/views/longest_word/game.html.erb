@@ -1,0 +1,17 @@
+<h1>LongestWord#game</h1>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+<% if flash[:notice2] %>
+    <div class="notice"><%= flash[:notice2] %></div>
+  <% end %>
+<p> <%= @final_grid %> </p>
+
+
+<form action="/score" method="get">
+<input type="hidden" name="start_time" value="<%= Time.now.to_time.to_i %>">
+<input type="hidden" name="grid_back" value="<%=@final_grid%>">
+<label for="letters">write that word blud!</label>
+  <input name="word" type="text">
+  <input type="submit" value="check">
+</form>
